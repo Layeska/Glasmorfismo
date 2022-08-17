@@ -1,18 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tillana&display=swap');
+
+:root {
+    --bg-principal: rgba(127, 148, 138, 1);
+    --bg-container: rgb(176, 196, 222, 1);
+    --bg-codigo: #7e86dd; 
+    --bg-codigo-title: #6371c5;
+    --bg-title-cod: #001b2a;
+}
+
 html {
     font-size: 62.5%;
 }
 
 body {
     font-size: 16px;
-    color: #001F3F;
+    color: var(--bg-title-cod);
     background-image: url("../img/fondo5.png");
- /*   background: #d8e2dc;*/
 }
-
 
 /*-- Contenedor principal --*/
 .container {
-   /* background: #b8c0ff;*/
     width: 80%;
     height: 85rem;
     margin-left: 10%;
@@ -20,28 +28,25 @@ body {
     justify-content: space-around;
 }
 
-
 /*@ El texto de encabezado */
 .sms {
-    /*background: #b9e769;*/
     height: 6.5rem;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
     position: absolute;
     text-decoration: underline;
-    color: #562155;    
+    color: var(--bg-title-cod);
 }
 
 /*@ Cuadros que forman el contenedor principal */
 .izq, .derecha {
     height: 65%;
     margin-top: 9rem;
-    /*background: #d6ccc2;*/
     position: relative;
-    
 }
 
-/*@ */
+/*@ Cuadro donde se visualizan los cambios dados */
 .izq {
     display: flex;
     align-items: center;
@@ -49,52 +54,49 @@ body {
     width: 50%;
 }
 
+/*@ Conteiner donde se muestran las opciones*/
 .derecha {
     width: 32%;
     border-radius: 10%;
-    background: #B0C4DE;
+    background: var(--bg-container);
+    backdrop-filter: blur(10px);
     box-shadow: 19px -5px 14px -1px rgba(0,0,0,0.79);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500;
+    font-size: 1.5rem;
 }
 
-/*@ */
+/*@ Estilos por defecto del cuadro a mostrar edit*/
 .cuadro {
-    background: rgba(127, 148, 138, 1);
-   /* backdrop-filter: blur(0px)  contrast(0%) saturate(50%);*/
+    background: var(--bg-principal);
     width: 350px;
     height: 350px;
     margin: auto;
 }
 
-/*++ La parte de la derecha */
-.contenido {
-    /*background: palegreen;
-    border: solid 1px black;*/
-    margin: 1rem 3rem;
-}
+/*++ La parte de la derecha ++*/
+.contenido { margin: 1rem 3rem; }
 
 .color {
-   /* background: #a9def9;*/
     display: flex;
     justify-content: center;
     font-size: 130%;
 }
 
-.color h2 {
-    font-size: 90%;
-}
+.color h2 { font-size: 90%; }
 
 .color input {
-   background: #B0C4DE;;
+   background: var(--bg-container);
    border: 0;   
    margin-top: 1.5rem;
    margin-left: 1rem;
 }
 
+/*@ Todos las barras de rangos*/
 .content {
-    font-size: 100%; /*130%*/
+    font-size: 100%;
     display: flex;
     justify-content: space-around;
-    /*background: goldenrod;*/
     flex-direction: column;
 }
 
@@ -105,37 +107,9 @@ body {
     margin-top: -1rem;
 }
 
-.content .porcent {
-    position: absolute;
-    width: 3rem;
-    height: 2rem;
-    right: 10px;
-    top: 0;
-    background-color: #171d49;
-    color: #d6ccc2;
-    padding-top: 5px;
-    font-size: 0.6em;
-    text-align: center;
-    margin-top: 8rem;
-    visibility: hidden;
-}
-  
-.content .porcent::before {
-    content: '';
-    z-index: 1;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-top: solid 6px #171d49;
-    border-left: solid 15px transparent;
-    border-right: solid 15px transparent;
-}
-
-/*@ Donde se mira el código css*/
+/*@ Donde se mira el código generado css*/
 .codigo {
-    background: #6371c5;
+    background: var(--bg-codigo-title);
     width: 85%;
     height: 20%;
     margin: auto;
@@ -143,28 +117,37 @@ body {
 }
 
 .codigo h3 {
-    background: #7e86dd; 
+    background: var(--bg-codigo);
     text-align: center;
     font-size: 1.5rem;
     opacity: 100%;
-    color: #001b2a;
+    color: var(--bg-title-cod);
 }
 
 .codigo .btn {
-    color: #001F3F;
+    color: var(--bg-title-cod);
     text-decoration: none;
     position: absolute;
     width: 85%;
     height: 4%;
-    margin-top: 2.1rem;
     text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .btn:hover {
-    background: #7e86dd;
+    background: var(--bg-codigo);
     border-radius: 0px 0px 20px 20px;
 }
 
-.btn:active {
-    font-size: 1.5rem;
+.btn:active { font-size: 1.5rem; }
+
+.codigo p {
+    font-size: 1rem;
+    text-align: left;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 700;
 }
